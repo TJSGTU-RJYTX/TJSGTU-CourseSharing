@@ -55,7 +55,7 @@
 
 ## 目录
 
-本项目收录的内容见 [收录内容](https://github.com/superpung/TJU-CourseSharing/blob/main/收录内容.md)。
+本项目收录的内容见 [收录内容](https://github.com/TJSGTU-RJYTX/TJSGTU-CourseSharing/blob/main/收录内容.md)。
 
 ## 使用
 
