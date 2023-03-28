@@ -1,6 +1,6 @@
 <div align="center">
 <img src="./header.png" alt="TJSGTU-CourseSharing" />
-  <h3>天津中德应用技术大学大学课程共享计划</h3>
+  <h3>天津中德应用技术大学课程共享计划</h3>
   
 
   <img style="display: inline-block;" src="https://img.shields.io/github/watchers/TJSGTU-RJYTX/TJSGTU-CourseSharing" alt="GitHub watchers" />
@@ -85,6 +85,8 @@ Issue、PR、纠错、资料、选课/考试攻略，完全欢迎！
 ### 贡献者
 
 感谢屏幕前的你。
+
+TJSGTU-RJYTX团队:[@Mengfanjun020906](https://github.com/MengFanjun020906);[@TuXiPeng](https://github.com/TuXiPeng);[@LX0102](https://github.com/LX0102);[@Georgina12138](https://github.com/Georgina12138);[@AnteleFox](https://github.com/AnteleFox);[@Areay7](https://github.com/Areay7)
 
 ## 许可
 
