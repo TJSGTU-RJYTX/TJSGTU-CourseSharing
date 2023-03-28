@@ -1,4 +1,5 @@
 <div align="center">
+<img src="./header.png" alt="TJSGTU-CourseSharing" />
   <h3>天津中德应用技术大学大学课程共享计划</h3>
   
 
@@ -39,7 +40,6 @@
 
 本项目至今为止收录了以下类别：
 
-- [x] 选课攻略：`README.md`
 - [x] 电子版教材：`[教材/]书名_第?版.pdf`
 - [x] 有价值课件：`课件/`
 - [x] 平时作业：`作业/`、`实验/`
