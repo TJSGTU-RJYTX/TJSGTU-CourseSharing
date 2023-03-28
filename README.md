@@ -1,6 +1,6 @@
 <div align="center">
 <img src="./header.png" alt="TJSGTU-CourseSharing" />
-  <h3>天津中德应用技术大学大学课程共享计划</h3>
+  <h3>天津中德应用技术大学课程共享计划</h3>
   
 
   <img style="display: inline-block;" src="https://img.shields.io/github/watchers/TJSGTU-RJYTX/TJSGTU-CourseSharing" alt="GitHub watchers" />
