@@ -115,3 +115,12 @@ TJSGTU-RJYTX团队:[@Mengfanjun020906](https://github.com/MengFanjun020906);[@Tu
 [电子科技大学课程复习资料共享平台](https://github.com/Xovee/uestc-course)
 
 [天津大学课程共享计划](https://github.com/superpung/TJU-CourseSharing)
+
+
+## 友情链接
+
+[天津中德应用技术大学官网](https://www.tsguas.edu.cn)
+
+[天津中德应用技术大学软件与通信学院官网](https://rjtx.tsguas.edu.cn/index.htm)
+
+[天津中德应用技术大学学生管理系统网站](http://10.0.202.28/eams/localLogin.action)
