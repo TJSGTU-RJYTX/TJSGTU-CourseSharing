@@ -86,7 +86,7 @@ Issue、PR、纠错、资料、选课/考试攻略，完全欢迎！
 
 感谢屏幕前的你。
 
-TJSGTU-RJYTX团队:[@Mengfanjun020906](https://github.com/MengFanjun020906);[@TuXiPeng](https://github.com/TuXiPeng);[@LX0102](https://github.com/LX0102);[@Georgina12138](https://github.com/Georgina12138);[@AnteleFox](https://github.com/AnteleFox);[@Areay7](https://github.com/Areay7)
+TJSGTU-RJYTX团队:[@Mengfanjun020906](https://github.com/MengFanjun020906);[@TuXiPeng](https://github.com/TuXiPeng);[@LX0102](https://github.com/LX0102);[@Georgina12138](https://github.com/Georgina12138);[@AnteleFox](https://github.com/AnteleFox);[@Areay7](https://github.com/Areay7);[@LiuXing54](https://github.com/LiuXing54);[@JackLau1222](https://github.com/JackLau1222);[@byy946yyds](https://github.com/byy946yyds)
 
 ## 许可
 
