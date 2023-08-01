@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/song-info.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title>song-info</title>
+	<script src="./js/js/vue.js"></script>
+	
+	<script>
+		document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+	</script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="top-nav">
+			<i class="fa fa-arrow-left" @click="goBack()"></i>
+			<i class="fa fa-send" @click="addCollect"></i>
+		</div>
+
+		<div class="info">
+			<span>{{ song.title }}</span>
+			<span>{{ song.singer }}</span>
+		</div>
+
+		<img class="cover" :src="song.cover" alt="">
+
+		<div class="audio">
+			<audio :src="`http://180.76.143.181:3000/${song.url}`" controls></audio>
+		</div>
+	</div>
+
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				song: {}
+			},
+			mounted() {
+				var url = location.search
+				url = url.slice(1)
+				console.log(url.split('='))
+				var sid = url.split('=')[1]
+
+				fetch('http://180.76.143.181:3000/song/info?sid=' + sid)
+					.then(res => res.json())
+					.then(res => {
+						console.log(res)
+						this.song = res.data
+					})
+				// 根据sid获取歌曲信息
+				this.song = songs.find(function (item) {
+					return item.sid == sid
+				})
+				console.log(this.song)
+			},
+			methods: {
+				goBack: function () {
+					history.back()
+				},
+				addCollect() {
+					var uid = localStorage.getItem('uid')
+					fetch('http://180.76.143.181:3000/collect/add?uid=' + uid + '&sid=' + this.song.sid)
+						.then(res => res.json()).then(res => {
+							console.log(res)
+						})
+				}
+			},
+		})
+	</script>
+</body>
+
+</html>

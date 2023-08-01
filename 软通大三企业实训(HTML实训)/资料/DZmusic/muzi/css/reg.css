@@ -1,0 +1,63 @@
+body {
+    background-color: red;
+}
+.top-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: .2667rem;
+    margin-right: .2667rem;
+    margin-top: .2667rem;
+
+
+}
+
+.top-nav>.fa{  
+    font-size: .6933rem;
+    color: white;
+
+}
+h2 {
+    font-size: .8rem;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.2667rem;
+    margin-bottom: 1.3333rem;
+}
+.logo {
+    /* 设置图片的大小 */
+    width: .8rem;
+    height: .8rem;
+    margin-right: .1333rem;
+
+}
+
+.form input{
+
+    width: 7.2rem;
+    height: .96rem;
+    border-radius: .6667rem;
+    border: none;
+    margin-bottom: .16rem;
+    /* 清除轮廓 */
+    outline: none;
+}
+
+.form button {
+    width: 7.4667rem;
+    height: .96rem;
+    border-radius: .5333rem;
+    border: none;
+    font-size: .5333rem;
+    background-color: red;
+    border: .0533rem solid white;
+    color: white;
+    font-weight: 200;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

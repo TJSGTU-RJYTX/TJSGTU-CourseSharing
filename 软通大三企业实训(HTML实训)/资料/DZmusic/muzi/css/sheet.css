@@ -1,0 +1,242 @@
+body {
+  margin: 0rem;
+}
+
+.info {
+  height: 4rem;
+  background-color: gray;
+  padding-top: .8rem;
+  padding-left: .5333rem;
+  display: flex;
+}
+
+
+.info .left img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.info .left {
+  position: relative;
+}
+
+.info .left span {
+  position: absolute;
+  left: 0;
+  top: .2667rem;
+  background-color: #b94257;
+  color: white;
+  width: 1.0667rem;
+  height: .6933rem;
+  line-height: .6933rem;
+
+  border-radius: 0 .3467rem .3467rem 0;
+  padding-left: .16rem;
+  font-size: .3733rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.info .count span {
+  position: absolute;
+  left: 2.2133rem;
+  width: 2.1333rem;
+  /* border: .0267rem solid red ; */
+  color: white;
+  display: inline-block;
+  font-size: small;
+}
+
+.info .right {
+  margin-left: .2667rem;
+  /* border: .0267rem solid red; */
+}
+
+.info .right .title {
+  font-size: .4267rem;
+  
+  /* border: .0267rem solid red; */
+}
+
+.info .right span {
+  margin-left: 0rem;
+  margin-right: 0rem;
+  color: white;
+  font-size: .48rem;
+}
+
+.info .right .title {
+  display: flex;
+  align-items: center;
+
+  font-size: .5333rem;
+}
+.info .right .comment {
+  display: flex;
+  font-size: 12px;
+}
+
+.info .right div{
+  position: relative;
+  display: flex;
+  font-size: .3733rem;
+  margin-top: .8rem;
+
+  /* border: .0267rem solid red; */
+}
+.info .right img {
+  position: absolute;
+  width: .8rem;
+  height: .8rem;
+  border-radius: .5333rem;
+  margin-top: 10px;
+}
+
+.info .right div span {
+  margin-left: 35px;
+  margin-top: 20px;
+  font-size: .3733rem;
+
+  /* border: .0267rem solid red; */
+}
+
+.info .right .avator .fa {
+  position:absolute;
+  font-size: .4267rem;
+  color: yellow;
+  left: 20px;
+  right: .5333rem;
+
+}
+
+.sheet-list {
+  top: 2.9333rem;
+  background-color: gainsboro;
+  font-size: .3733rem;
+  color: gray;
+  line-height: .8rem;
+  padding-left: .2667rem;
+}
+
+.box .item .seq {
+  height: .5333rem;
+  width: .1333rem;
+  color: black;
+  font-size: .5333rem;
+}
+.box{
+  margin-top: .16rem;
+}
+.box .item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: .0267rem solid gainsboro; 
+  padding-bottom: .1333rem;
+  margin-bottom: .2667rem;
+  margin-top: .2667rem;
+}
+.box .item img{
+  width: .2667rem;
+}
+.box .item .info-song .title{
+  margin-left: .5333rem;
+  margin-bottom: .08rem;
+
+}
+.box .item .info-song{
+  display: flex;
+  flex-direction: column;
+  width: 5.8667rem;
+  /* border: .0267rem solid red; */
+}
+.box .item .info-song .ps{
+  display: flex;
+}
+
+.box .item .info-song .ps span:nth-child(1) {
+  color: #ff2721;
+  width: 1.0667rem;
+  height: .4rem;
+  border: .0267rem solid #ff2721;
+  border-radius: .16rem;
+  font-size: .2667rem;
+  line-height: .4rem;
+  text-align: center;
+  justify-content: center;
+  margin-left: .5333rem;
+  margin-top: .0533rem;
+} 
+.box .item .info-song .ps span:nth-child(2) {
+  width: 1.8667rem;
+  font-size: .32rem;
+  line-height: .48rem;
+  text-align: center;
+  margin-left: .1333rem;
+  color: gray;
+  margin-top: .0533rem;
+} 
+.box .item .info .title{
+  font-size: .3733rem;
+  margin-top: .4rem;
+  margin-bottom: .1333rem;
+}
+.box .item .info .ps{
+  display: flex;
+} 
+.box .item .play{
+  width: .6667rem;
+  height: .6667rem;
+  margin-left: 1.7333rem;
+  /* border: .0267rem solid blue; */
+  margin-top: .2133rem;
+}
+.box .item .fa{
+  width: .6667rem;
+  height: .6667rem;
+  margin-left: .5333rem;
+  /* border: .0267rem solid black; */
+  margin-top: .5333rem;
+}
+hr {
+  border: none; /* 移除默认边框 */
+  height: .0267rem; /* 设置高度 */
+  background-color: gray; /* 设置背景颜色 */
+}
+.tab-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  height: 2.1333rem;
+  /* border: .0267rem solid red; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tab-bar>.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-bar>.item>i {
+  font-size: .8rem;
+}
+
+.tab-bar>.item>span {
+  margin-top: .16rem;
+  font-size: .3733rem;
+}
+
+.tab-bar>.active {
+  color: red;
+}
+.info-song .title{
+  font-size: .4533rem;
+}
+.fa {
+  font-size: 18px;
+}

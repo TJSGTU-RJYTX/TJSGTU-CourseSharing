@@ -1,0 +1,60 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.0667rem;
+  }
+  
+  .info .avatar {
+    width: 4.2667rem;
+    height: 4.2667rem;
+    border-radius: 2.1333rem;
+  }
+  
+  .info .uname {
+    font-size: .48rem;
+    margin-top: .5333rem;
+  }
+  
+  .tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 2.1333rem;
+    /* border: .0267rem solid red; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.editavatar{
+  display: flex;
+  margin-left: 30px;
+}
+.tab-bar>.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-bar>.item>i {
+    font-size: .8rem;
+}
+
+.tab-bar>.item>span {
+    margin-top: .16rem;
+    font-size: .3733rem;
+}
+
+.tab-bar>.active {
+    color: red;
+}
+.out{
+    margin-top: .5333rem;
+    text-align: center;
+}
+.edit{
+  margin-top: .1333rem;
+  text-align: center;
+}

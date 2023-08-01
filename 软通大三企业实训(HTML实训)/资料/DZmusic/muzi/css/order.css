@@ -1,0 +1,161 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+    /* background-color: pink; */
+  }
+  
+  .top-bar>i {
+    font-size: 16px
+  }
+  
+  .top-bar>span {
+    font-size: 16px;
+  }
+  
+  .top-bar>img {
+    width: 36px;
+    height: 26px;
+  }
+  
+  .bangdan {
+    margin: 10px 20px;
+    /* border:1px solid red; */
+    height:250px;
+  }
+  
+  .bangdan>.title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .bangdan>.box {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bangdan>.box>.item>span {
+    font-size: 12px;
+  }
+  
+  .bangdan>.box>.item>div {
+    width: 105px;
+    height: 130px;
+    border-radius: 5px;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  
+  
+  .bangdan>.box>.item>div>span:nth-child(1) {
+    font-size: 20px;
+    color: white;
+    height: 100px;
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .bangdan>.box>.item>div>span:nth-child(2) {
+    font-size: 12px;
+    color: white;
+    padding-left: 10px;
+  }
+  
+  .bangdan>.box>.item:nth-child(1)>div {
+    background: linear-gradient(red,  yellow);
+  }
+  
+  .bangdan>.box>.item:nth-child(2)>div {
+    background: linear-gradient(300deg,blue, #d09fce);
+  }
+  
+  .bangdan>.box>.item:nth-child(3)>div {
+    background: linear-gradient(300deg,green, #03b493);
+  }
+
+  .guanfang .title{
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  .guanfang .box .item{
+    margin-left: 5px;
+    width: 400px;
+    height: 147px;
+    /* background-color: pink; */
+    display: flex;
+    /* flex-direction: column; */
+    margin-bottom: 8px;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    
+
+  }
+  
+  .guanfang .box .item .left {
+    display: flex;
+    width: 124px;
+    height: 140px;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    background: rgb(85, 85, 232);
+    border-radius: 5px;
+  }
+
+  .guanfang .box .item .left span:nth-child(1){
+    font-size: 20px;
+    padding-top: 60px;
+    height: 70px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .guanfang .box .item .left span:nth-child(2){
+    font-size: 12px;
+    color: white;
+    padding-left: 10px;
+  }
+  .guanfang .box .item .right{
+    font-size: 25px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .guanfang .box .item .right{
+    font-size: 16px;
+    color: gray;
+    padding-top: 34px;
+    padding-bottom: 40px;
+    justify-content: space-evenly;
+    margin-left: 15px;
+  }
+  .more .title {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+.more .box .item div{
+  margin-left: 20px;
+  width: 100px;
+  height: 110px;
+  border-radius: 5px;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+.more .box .item span{
+  font-size: 15px;
+  margin-left: 20px;
+  
+}
+

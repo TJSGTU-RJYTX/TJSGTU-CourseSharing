@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue框架 -->
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <!-- 创建一个div元素,id为app,不可变,后续所有的html代码都写在此div内部 -->
+  <div id="app">
+    <!-- 使用双花括号解析data中的数据 -->
+    <!-- v-for 循环 -->
+    <!-- 数组中的每一个元素 of 要循环的数组 -->
+    <h3 v-for="item of users">{{ item }}</h3>
+    <!-- i 数组下标 -->
+    <h3 v-for="(item,i) of users">{{ i }} , {{ item }}</h3>
+    <div v-for="item of songs">
+      {{ item }} <br>
+      {{ item.sid }} => {{ item.title }} => {{ item.singer }}
+    </div>
+  </div>
+  <script>
+    // 创建一个vue对象
+    var vm = new Vue({
+      el: "#app", // 指定vue对象控制的元素
+      // 通过vue对象的data属性中的数据,可以直接在html中使用
+      data: {
+        users: ['tom', 'jerry', 'jack'],
+        songs: [
+          { "sid": 1, "title": "TBD", "singer": "David", },
+          { "sid": 2, "title": "出头天", "singer": "五月天", },
+          { "sid": 3, "title": "刚刚好", "singer": "薛之谦", },
+          { "sid": 4, "title": "你不是真正的快乐", "singer": "邓紫棋", }
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>

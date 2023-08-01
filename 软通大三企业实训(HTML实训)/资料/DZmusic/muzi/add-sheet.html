@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/add-sheet.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title>添加歌单</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="top-nav">
+			<i class="fa fa-arrow-left" @click="goBack()"></i>
+		</div>
+    <di class="addedlist">已添加歌曲:{{ sheetSongs }}</di>
+    <div class="ps">
+      歌单名:<br><input type="text" v-model="title"> <br>
+      描述:<br><input type="text" v-model="intro"> <br>
+      <button @click="add">添加</button>
+    </div>
+    <div class="box">
+      <div v-for="song of songs">
+        <input type="checkbox" v-model="sheetSongs" :value="song.sid"> {{ song.title }}
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        songs: [],
+        sheetSongs: [],
+        title: '',
+        intro: ''
+      },
+      mounted() {
+        fetch('http://180.76.143.181:3000/song/list')
+          .then(res => res.json()).then(res => {
+            console.log(res)
+            this.songs = res.data
+          })
+      },
+      methods: {
+        add() {
+          var uid = localStorage.getItem('uid')
+          fetch('http://180.76.143.181:3000/sheet/add',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                uid: uid,
+                title: this.title,
+                intro: this.intro,
+                sids: this.sheetSongs.join()
+              })
+            })
+            .then(res => res.json()).then(res => {
+              console.log(res)
+            })
+        },
+        goBack: function () {
+					history.back()
+				},
+      },
+    })
+  </script>
+</body>
+
+</html>

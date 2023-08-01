@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/user-sheet.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title>用户歌单</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="info">
+      <div class="left">
+        <img src="img/song/996.jpg" alt="">
+        <span>歌单</span>
+      </div>
+      <div class="count">
+        <span class="fa fa-play">114万次</span>
+      </div>
+      <div class="right">
+        <span class="title">
+          <div v-for="sheet of sheets" >
+            {{ sheet.title }}
+          </div>
+          
+        </span>
+        <span class="comment">
+          <div v-for="sheet of sheets" >
+            {{ sheet.intro }}
+          </div>
+        </span>
+        <div class="avator">
+          <img src="./img/user/default.jpg" alt="">
+          <span>GNC顾念辰</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-list">
+      歌曲列表
+    </div>
+    
+    <div class="box">
+      <div class="item" v-for="(song,i) of songList">
+          <div class="seq">{{1+i}}</div>
+          <div class="info-song">
+              <div class="title">{{ song.title }}</div>
+              <div class="ps">
+                  <span>原创</span>
+                  <span>翻唱-{{ song.singer }}</span>
+              </div>
+          </div>
+          <img class="play" src="img/youtube.png" alt="" @click="goToSong(song.sid)">
+          <i class="fa fa-ellipsis-v"></i>
+      </div>
+  </div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        sheets: []
+      },
+      mounted() {
+        fetch('http://180.76.143.181:3000/sheet/byUid?uid=6')
+          .then(res => res.json()).then(res => {
+            console.log(res)
+            this.sheets = res.data
+            console.log(res.data[0].intro)
+          })
+      },
+    })
+  </script>
+</body>
+
+</html>

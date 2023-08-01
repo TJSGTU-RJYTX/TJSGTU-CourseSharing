@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Document</title>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <link rel="stylesheet" href="./swiper-7.4.1/swiper/swiper-bundle.min.css">
+  <style>
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 110px;
+      height: 160px;
+    }
+
+    .swiper-slide img {
+      width: 110px;
+      height: 130px;
+    }
+
+    .swiper-3d .swiper-slide-shadow-left {
+      background: transparent !important;
+    }
+
+    .swiper-3d .swiper-slide-shadow-right {
+      background: transparent !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="sheet of sheets">
+          <img :src="sheet.pic" />
+          <span>{{ sheet.title }}</span>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+  </div>
+
+  <script src="./swiper-7.4.1/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        sheets: []
+      },
+      mounted() {
+        fetch('http://180.76.143.181:3000/sheet/list').then(res => res.json()).then(res => {
+          this.sheets = res.data.slice(0, 9);
+          console.log(this.sheets);
+        })
+        var swiper = new Swiper(".mySwiper", {
+          autoplay: {
+            delay: 200,//1秒切换一次
+          },
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+        });
+      },
+    })
+  </script>
+
+</body>
+
+</html>

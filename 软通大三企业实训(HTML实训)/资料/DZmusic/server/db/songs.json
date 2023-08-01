@@ -1,0 +1,85 @@
+ [{
+    "sid": 1,
+    "title": "TBD",
+    "singer": "David",
+    "cover": "img/song/615.jpg",
+    "url": "audio/615.mp3"
+},
+{
+    "sid": 2,
+    "title": "出头天",
+    "singer": "五月天",
+    "cover": "img/song/618.jpg",
+    "url": "audio/618.mp3"
+},
+{
+    "sid": 3,
+    "title": "刚刚好",
+    "singer": "薛之谦",
+    "cover": "img/song/781.jpg",
+    "url": "audio/781.mp3"
+},
+{
+    "sid": 4,
+    "title": "你不是真正的快乐",
+    "singer": "邓紫棋",
+    "cover": "img/song/796.jpg",
+    "url": "audio/796.mp3"
+},
+{
+    "sid": 5,
+    "title": "绅士",
+    "singer": "薛之谦",
+    "cover": "img/song/801.jpg",
+    "url": "audio/801.mp3"
+},
+{
+    "sid": 6,
+    "title": "天外来物",
+    "singer": "薛之谦",
+    "cover": "img/song/805.jpg",
+    "url": "audio/805.mp3"
+},
+{
+    "sid": 7,
+    "title": "突然好想你",
+    "singer": "五月天",
+    "cover": "img/song/809.jpg",
+    "url": "audio/809.mp3"
+},
+{
+    "sid": 8,
+    "title": "我不愿让你一个人",
+    "singer": "五月天",
+    "cover": "img/song/813.jpg",
+    "url": "audio/813.mp3"
+},
+{
+    "sid": 9,
+    "title": "我心中的尚未崩坏的地方",
+    "singer": "五月天",
+    "cover": "img/song/821.jpg",
+    "url": "audio/821.mp3"
+},
+{
+    "sid": 10,
+    "title": "想见你想见你想见你",
+    "singer": "八三夭",
+    "cover": "img/song/900.jpg",
+    "url": "audio/900.mp3"
+},
+{
+    "sid": 11,
+    "title": "像风一样",
+    "singer": "薛之谦",
+    "cover": "img/song/903.jpg",
+    "url": "audio/903.mp3"
+},
+{
+    "sid": 12,
+    "title": "这就是爱",
+    "singer": "张杰",
+    "cover": "img/song/905.jpg",
+    "url": "audio/905.mp3"
+}
+]

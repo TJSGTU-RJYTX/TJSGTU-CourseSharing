@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue框架 -->
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <!-- 创建一个div元素,id为app,不可变,后续所有的html代码都写在此div内部 -->
+  <div id="app">
+    <!-- 使用双花括号解析data中的数据 -->
+    <!-- v-model 双向绑定 -->
+    <input type="text" v-model="str">
+    <h3>{{ str }}</h3>
+    <button @click="search">搜索</button>
+    <h3>{{ str }}</h3>
+    <button @click="goTo03">goTo03</button>
+  </div>
+  <script>
+    // 创建一个vue对象
+    var vm = new Vue({
+      el: "#app", // 指定vue对象控制的元素
+      // 通过vue对象的data属性中的数据,可以直接在html中使用
+      data: {
+        str: '114514'
+      
+      },
+      methods: {
+        search: function () {
+          console.log('搜索...')
+        },
+        goTo03: function () {
+          // 跳转到03.html
+          location.href = './03.html'
+        }
+      },
+      // mounted: 当vue对象控制的元素,被显示到页面中之后,会自动执行mounted中的代码
+      // 在mounted中,可以获取到vue对象中的data中的数据,使用this. 访问,并且可以修改法
+      mounted() {
+        console.log('mounted: ', this.str)
+        this.str = 'hello vue'
+      },
+    })
+  </script>
+</body>
+
+</html>

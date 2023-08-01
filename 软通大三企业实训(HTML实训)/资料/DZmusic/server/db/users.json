@@ -1,0 +1,26 @@
+[
+  {
+    "uid": 1,
+    "phone": "13501234567",
+    "upwd": "123456",
+    "avatar": "img/user/101.jpg"
+  },
+  {
+    "uid": 2,
+    "phone": "13501234568",
+    "upwd": "123456",
+    "avatar": "img/user/102.jpg"
+  },
+  {
+    "uid": 3,
+    "phone": "13501234569",
+    "upwd": "123456",
+    "avatar": "img/user/103.jpg"
+  },
+  {
+    "uid": 4,
+    "phone": "13501234560",
+    "upwd": "123456",
+    "avatar": "img/user/104.jpg"
+  }
+]

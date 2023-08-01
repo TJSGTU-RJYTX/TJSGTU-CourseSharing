@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/find.css">
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="search">
+            <i class="fa fa-microphone  fa-lg"></i>
+            <input type="text" placeholder="搜夜曲" v-model="searchStr">
+            <img src="img/song/615.jpg" class="search_input" alt="" @click="goToSearch()">
+
+        </div>
+
+        <div class="banner">
+            <div class="imgs" @click="goToSheet(sheet.sid)">
+                <img :src="imgs[imgsIndex].src" alt="">
+            </div>
+            <div class="pointer">
+                <span v-for="(item,i) of imgs" :class=" {  active : i == imgsIndex } "></span>
+            </div>
+        </div>
+        <div class="category">
+            <div class="item">
+                <i class="fa fa-calendar"></i>
+                <span>每日推荐</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-headphones" @click="goToAddSheet"></i>
+                <span @click="goToAddSheet">创建歌单</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-trophy" @click="goToOrder()"></i>
+                <span @click="goToOrder()">排行榜</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-bullhorn"></i>
+                <span>电台</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-caret-square-o-right"></i>
+                <span>直播</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-heart"></i>
+                <span>火前留名</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-comments"></i>
+                <span>畅聊</span>
+            </div>
+        </div>
+
+        <div class="choice">
+            <div class="choice-title">
+                <span class="left">你的精选歌单站</span>
+                <span class="right">查看更多</span>
+            </div>
+            <div class="choice-box">
+                <div class="choice-item" v-for="sheet of sheets">
+                    <img :src="sheet.pic" alt="" @click="goToSheet(sheet.sid)">
+                    <span>{{ sheet.intro }}</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="story">
+            <div class="story-title">
+                <span class="left">他们把故事唱成了歌曲</span>
+
+                <button class="fa fa-play"> 播放全部</button>
+            </div>
+        </div>
+
+        <div class="story-box">
+            <div class="item" v-for="song of songs">
+                <img :src="song.cover" class="cover" alt="">
+                <div class="info">
+                    <div class="title">
+                        <span>{{ song.title }}</span>
+                        <span>-{{ song.singer }}</span>
+                    </div>
+                    <div class="ps">
+                        <span>SQ</span>
+                        <span>{{ song.title }}</span>
+                    </div>
+                </div>
+                <img class="play" src="./img/_play.png" alt="" @click="goToSong(song.sid)">
+            </div>
+        </div>
+
+
+
+        <div class="tab-bar">
+            <div class="item active">
+                <i class="fa fa-globe"></i>
+                <span>发现</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-video-camera"></i>
+                <span>视频</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-music" @click="goToWode"></i>
+                <span @click="goToWode">我的</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-users"></i>
+                <span>云村</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-user" @click="goToUser()"></i>
+                <span>账号</span>
+            </div>
+        </div>
+
+    </div>
+
+    <br> <br><br>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+				imgs: [],
+				imgsIndex: 0,
+				sheets: [],
+				songs: [],
+				searchStr: '',
+            },
+            mounted() {
+				// 由于网络请求响应时间不确定,所以所有响应需要执行的操作
+				// 	都写在获取到响应结果的函数内部
+				fetch('http://180.76.143.181:3000/index/carousel')
+					.then(res => res.json()).then(res => {
+						this.imgs = res.data
+						setInterval(() => {
+							this.imgsIndex++
+							if (this.imgsIndex == this.imgs.length) {
+								this.imgsIndex = 0
+							}
+						}, 1500);
+					})
+				fetch('http://180.76.143.181:3000/sheet/list')
+					.then(res => res.json()).then(res => {
+						this.sheets = res.data
+					})
+
+				fetch('http://180.76.143.181:3000/song/list')
+					.then(res => res.json()).then(res => {
+						this.songs = res.data
+					})
+            },
+            methods: {
+                goToSong: function (sid) {
+                    window.location.href = './song-info.html?sid=' + sid
+                },
+                goToSheet: function (sid) {
+                    location.href = './sheet.html?sid=' + sid
+                },
+                goToUser: function () {
+                    location.href = './user.html'
+                },
+                goToSearch: function () {
+                    location.href = './search.html?searchStr=' + this.searchStr
+                },
+                goToOrder: function () {
+                    location.href = './order.html'
+                },
+                goToWode: function () {
+                    location.href = './wode.html'
+                },
+                goToAddSheet:function (){
+                    location.href = './add-sheet.html'
+                }
+
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>

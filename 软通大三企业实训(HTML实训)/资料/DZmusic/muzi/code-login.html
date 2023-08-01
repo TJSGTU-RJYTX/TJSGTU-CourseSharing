@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/code-login.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title>手机号登陆</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="top-nav">
+			<i class="fa fa-arrow-left" @click="goBack()"></i>
+		</div>
+    <h2>
+      <img src="img/dzy.png" class="logo" alt="加载">
+      丁真音乐
+    </h2>
+
+    <div class="from">
+      手机号: <input type="text" v-model="phone" placeholder="手机号+86"> 
+      <button @click="getCode">获取验证码</button> 
+      验证码: <input type="text" v-model="code" placeholder="输入6位验证码"> 
+      <button @click="login">登录</button>
+    </div>
+
+
+
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        phone: '',
+        code: ''
+      },
+      methods: {
+        getCode() {
+          fetch('http://180.76.143.181:3000/user/getCode?phone=' + this.phone)
+            .then(res => res.json()).then(res => {
+              console.log(res)
+              // this.code = res.code
+            })
+        },
+        goBack: function () {
+					history.back()
+				},
+
+        login() {
+          fetch('http://180.76.143.181:3000/user/codeLogin?phone=' + this.phone + '&code=' + this.code)
+            .then(res => res.json()).then(res => {
+              console.log(res)
+              if(res.coed==200)
+              {
+                location.href = "find.html";
+              }
+              
+            })
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

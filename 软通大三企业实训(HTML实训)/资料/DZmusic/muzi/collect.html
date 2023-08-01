@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/collect.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="info">
+      <div class="left">
+        <img src="img/song/996.jpg" alt="">
+        <span>歌单</span>
+      </div>
+      <div class="count">
+        <span class="fa fa-play">114万次</span>
+      </div>
+      <div class="right">
+        <span class="title">
+          我喜欢的歌曲
+        </span>
+        <span class="comment">
+          我喜欢的歌曲
+        </span>
+        <div class="avator">
+          <img src="./img/user/default.jpg" alt="">
+          <span>GNC顾念辰</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-list">
+      歌曲列表
+    </div>
+
+    <!-- <div v-for="(item,i) of collect">
+      {{ i+1 }} => {{ item.title }} <button @click="rmCollect(item.sid)">取消收藏</button>
+    </div> -->
+
+
+    <div class="box">
+      <div class="item" v-for="(item,i) of collect">
+        <div class="seq">{{ i+1 }}</div>
+        <div class="info-song">
+          <div class="title">{{ item.title }} </div>
+        </div>
+        <button @click="rmCollect(item.sid)">取消收藏</button>
+        <div class="unlike">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <div class="tab-bar">
+      <div class="item active">
+        <i class="fa fa-globe" @click="goToFind"></i>
+        <span @click="goToFind">发现</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-video-camera"></i>
+        <span>视频</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-music" @click="goToWode"></i>
+        <span @click="goToWode">我的</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-users"></i>
+        <span>云村</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-user" @click="goToUser()"></i>
+        <span @click="goToUser()">账号</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        collect: []
+      },
+      methods: {
+        rmCollect(sid) {
+          var uid = localStorage.getItem('uid')
+          fetch('http://180.76.143.181:3000/collect/remove?uid=' + uid + '&sid=' + sid)
+            .then(res => res.json()).then(res => {
+              console.log(res)
+              // 刷新页面
+              location.reload()
+            })
+        },
+        goToFind: function () {
+          window.location.href = "find.html";
+        },
+        goToUser: function () {
+          location.href = './user.html'
+        },
+        goToWode: function () {
+          location.href = './wode.html'
+        },
+      },
+      mounted() {
+        var uid = localStorage.getItem('uid')
+        fetch('http://180.76.143.181:3000/collect/list?uid=' + uid).then(res => res.json()).then(res => {
+          console.log(res)
+          this.collect = res.data
+        })
+
+      },
+
+    })
+  </script>
+</body>
+
+</html>

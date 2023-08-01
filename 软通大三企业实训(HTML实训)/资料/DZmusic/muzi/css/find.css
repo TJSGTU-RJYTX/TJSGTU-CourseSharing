@@ -1,0 +1,317 @@
+.search>img {
+    width: .8rem;
+    height: .8rem;
+    border: .08rem solid gray;
+    border-radius: .48rem;
+    margin-left: .2667rem;
+}
+
+.search {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: .2667rem;
+    padding-bottom: .2667rem;
+    background-color: white;
+    z-index: 999;
+    /* border: .0267rem solid red; */
+}
+.search .fa{
+    font-size: .6667rem;
+}
+
+.search>input {
+
+    /* 搜索放大镜图标 */
+    background-image: url("../img/search.png");
+    background-size: .4267rem .4267rem;
+    /* background-position: center; */
+
+    background-position-x: .2933rem;
+    background-position-y: .1867rem;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    justify-content: space-evenly;
+
+    border: none;
+    height: .7467rem;
+    width: 6.4rem;
+    border-radius: .3733rem;
+    /* 搜夜曲的位置通过padding判断 */
+    padding-left: .8rem;
+    margin-left: .2667rem;
+}
+
+.search>fa fa-microphone {
+    width: .5333rem;
+    height: .5333rem;
+
+}
+
+.tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 2.1333rem;
+    /* border: .0267rem solid red; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tab-bar>.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-bar>.item>i {
+    font-size: .8rem;
+}
+
+.tab-bar>.item>span {
+    margin-top: .16rem;
+    font-size: .3733rem;
+}
+
+.tab-bar>.active {
+    color: red;
+}
+
+.banner {
+    margin-top: 1.6rem;
+    position: relative;
+    z-index: 2;
+}
+
+.banner .imgs img {
+    width: 100%;
+    border-radius: .16rem;
+}
+
+
+.banner>.pointer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: .32rem;
+    left: 0;
+    right: 0;
+
+}
+
+.banner>.pointer>span {
+    width: .2667rem;
+    height: .2667rem;
+    background-color: gray;
+    margin-left: .2667rem;
+    border-radius: .1333rem;
+    margin-right: .1067rem;
+}
+
+.banner>.pointer>.active {
+    background-color: red;
+}
+
+.choice {
+
+    margin-top: .2667rem;
+}
+
+.choice .choice-title {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .16rem;
+    color: #504e4a;
+    font-size: .4rem;
+
+}
+
+.choice .choice-title .right {
+    font-size: .32rem;
+    color: #999;
+    border-radius: .1333rem;
+    border: .0267rem solid;
+    background-color: white;
+    border-color: gray;
+    padding: .0667rem ;
+
+}
+
+.choice-box {
+    display: flex;
+    /* 设置图像可以滚动显示 */
+    overflow: scroll;
+}
+
+/* 清除滚动条 */
+.choice-box::-webkit-scrollbar {
+    display: none;
+}
+
+.choice-box .choice-item span {
+    font-size: .32rem;
+    /* 让文本只显示2行,并且超出的部分显示... */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.choice-box .choice-item {
+    display: flex;
+    flex-direction: column;
+    width: 2.1333rem;
+    margin-right: .2667rem;
+}
+
+.choice-box .choice-item img {
+    width: 2.1333rem;
+    border-radius: .2133rem;
+    margin-bottom: .16rem;
+}
+
+.choice-box .choice-item span {
+    font-size: .32rem;
+}
+
+.category {
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 2.1333rem;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.category>.item {
+    display: flex;
+    flex-direction: column;
+    margin-top: .1333rem;
+    margin-bottom: .1333rem;
+    /* border: .0267rem solid red; */
+    align-items: center;
+    justify-content: center;
+    margin-left: .08rem;
+}
+
+.category>.item>span {
+    font-size: .2667rem;
+
+}
+
+.category>.item>i {
+
+    color: white;
+    font-size: .5333rem;
+    border: .32rem solid red;
+    border-radius: 1.8667rem;
+    background-color: red;
+
+}
+
+.story .story-title {
+    font-size: .4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: .1333rem;
+    align-items: center;
+    color: #504e4a;
+   
+
+}
+
+.story>.story-title>.fa-play {
+    font-size: .32rem;
+    color: #999;
+    border-radius: .1333rem;
+    border: 1;
+    background-color: white;
+    border-color: gray;
+    padding: .1067rem;
+
+}
+
+.story-box {
+    margin-top: .2667rem;
+    flex-direction: column;
+}
+
+.story-box .item .cover {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: .1333rem;
+}
+
+.story-box .item .play {
+    width: .8rem;
+    height: .8rem;
+    background-color: red;
+    border-radius: .4rem;
+    margin-left: 1.3333rem;
+
+}
+
+.story-box .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: .2667rem;
+    /* border: .0267rem solid red; */
+}
+
+.story-box .item .info {
+    font-size: .4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.44rem;
+    margin-left: .1867rem;
+    /* border: .0267rem solid red; */
+    width: 5.8667rem;
+
+}
+
+.story-box .item .info .title span:nth-child(1) {
+    font-size: .4rem;
+}
+
+.story-box .item .info .title span:nth-child(2) {
+    font-size: .32rem;
+    color: gray;
+}
+
+.story-box .item .info .ps {
+    display: flex;
+    align-items: center;
+}
+
+.story-box .item .info .ps span:nth-child(1) {
+    font-size: .32rem;
+    color: red;
+    border: .0267rem solid red;
+    width: .9067rem;
+    height: .48rem;
+    line-height: .48rem;
+    text-align: center;
+    border-radius: .16rem;
+    margin-right: .2667rem;
+}
+
+.story-box .item .info .ps span:nth-child(2) {
+    font-size: .32rem;
+    color: gray;
+}

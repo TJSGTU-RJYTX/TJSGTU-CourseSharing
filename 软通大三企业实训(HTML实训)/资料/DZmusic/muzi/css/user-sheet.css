@@ -1,0 +1,111 @@
+body {
+    margin: 0rem;
+  }
+  
+  .info {
+    height: 4rem;
+    background-color: gray;
+    padding-top: .8rem;
+    padding-left: .5333rem;
+    display: flex;
+  }
+  
+  
+  .info .left img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  
+  .info .left {
+    position: relative;
+  }
+  
+  .info .left span {
+    position: absolute;
+    left: 0;
+    top: .2667rem;
+    background-color: #b94257;
+    color: white;
+    width: 1.0667rem;
+    height: .6933rem;
+    line-height: .6933rem;
+  
+    border-radius: 0 .3467rem .3467rem 0;
+    padding-left: .16rem;
+    font-size: .3733rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  
+  .info .count span {
+    position: absolute;
+    left: 2.2133rem;
+    width: 2.1333rem;
+    /* border: .0267rem solid red ; */
+    color: white;
+    display: inline-block;
+    font-size: small;
+  }
+  
+  .info .right {
+    margin-left: .2667rem;
+    /* border: .0267rem solid red; */
+  }
+  
+  .info .right .title {
+    font-size: .4267rem;
+    
+    /* border: .0267rem solid red; */
+  }
+  
+  .info .right span {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    color: white;
+    font-size: .48rem;
+  }
+  
+  .info .right .title div{
+    display: flex;
+    align-items: center;
+    font-size: .5333rem;
+    margin-top: 2px;
+  }
+  .info .right .comment div{
+    display: flex;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .info .right div{
+    position: relative;
+    display: flex;
+    font-size: .3733rem;
+    margin-top: .8rem;
+  
+    /* border: .0267rem solid red; */
+  }
+  .info .right img {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    border-radius: .5333rem;
+    margin-top: 10px;
+  }
+  
+  .info .right div span {
+    margin-left: 35px;
+    margin-top: 20px;
+    font-size: .3733rem;
+  
+    /* border: .0267rem solid red; */
+  }
+
+  .sheet-list {
+    top: 2.9333rem;
+    background-color: gainsboro;
+    font-size: .3733rem;
+    color: gray;
+    line-height: .8rem;
+    padding-left: .2667rem;
+  }

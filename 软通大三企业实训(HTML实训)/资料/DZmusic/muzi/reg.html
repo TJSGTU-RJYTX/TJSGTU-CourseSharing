@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/reg.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title>注册</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="top-nav">
+			<i class="fa fa-arrow-left" @click="goBack()"></i>
+		</div>
+    <h2>
+      <img src="img/dzy.png" class="logo" alt="加载">
+      丁真音乐
+   </h2>
+   <div class="form">
+   <input type="text" v-model="phone" placeholder="手机号码"> <br>
+    <input type="password" v-model="upwd" class="inupwd" placeholder="输入密码"> <br>
+    <input type="password" v-model="upwd" class="inupwd" placeholder="再次确认密码"><br>
+    <button @click="reg()">注册</button>
+  </div>
+  <!-- <span>{{ res.msg }}</span> -->
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        phone: '',
+        upwd: '',
+        msg: ''
+      },
+      methods: {
+        reg() {
+          fetch('http://180.76.143.181:3000/user/register',
+            {
+              method: 'POST',
+              body: JSON.stringify({ phone: this.phone, upwd: this.upwd }),
+              headers: { 'Content-Type': 'application/json' }
+            }).then(res => res.json()).then(res => {
+              console.log(res)
+              if(res.code==201) {
+              console.log(res.msg)
+            }
+            })
+
+            // location.href = "login.html";
+        },
+        goBack: function () {
+					history.back()
+				},
+      },
+    })
+  </script>
+</body>
+
+</html>

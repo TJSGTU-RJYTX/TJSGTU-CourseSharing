@@ -1,0 +1,206 @@
+      
+body {
+    background-color: black;
+  }
+  
+  .info {
+    margin: 10px 20px;
+  }
+  
+  .info>img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 20px;
+  }
+  
+  .info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .info>div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info>div>span:nth-child(1) {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  .info>div>span:nth-child(2) {
+    font-size: 12px;
+    color: white;
+    background-color: gray;
+    width: 40px;
+    height: 16px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 16px;
+  }
+  
+  .info>.vip {
+    color: white;
+    margin-left: auto;
+  
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  
+  .nav>.item {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav>.item>span,
+  .nav>.item>.fa {
+    color: white;
+  }
+  
+  .nav>.item>.fa {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .wode {
+    border-radius: 20px;
+    height: 600px;
+    background-color: white;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  
+  .wode>.yinyue {
+    margin: 10px 20px;
+    border-radius: 10px;
+    background-image: url('https://img2.baidu.com/it/u=3455539149,2144715540&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281');
+    background-size: cover;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .wode>.yinyue>i {
+    font-size: 30px;
+    color: red;
+  }
+  
+  .wode>.yinyue>span {
+    color: white;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  
+  .zuijin {
+    margin: 10px 20px;
+    overflow: scroll;
+  }
+  
+  .box {
+    width: 600px;
+    display: flex;
+  
+  }
+  
+  .zuijin .item {
+    width: 140px;
+    height: 80px;
+    margin-right: 10px;
+    display: flex;
+    /* border: 1px solid red; */
+  }
+  
+  .zuijin .item>div {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .zuijin .item img {
+    height: 60px;
+    border-radius: 5px;
+  }
+  
+  .zuijin .item i {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    
+  }
+  
+  .zuijin .item>div>span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #75757587;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+  
+  .zuijin .item>span {
+    margin-top: 10px;
+    font-size: 10px;
+        /* 让文本只显示2行,并且超出的部分显示... */
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        word-wrap: break-word;
+  }
+  .zuijin .item .fa{
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    color: red;
+    font-size: .5333rem;
+    border: .32rem solid #dcdcdc85;
+    border-radius: 1.8667rem;
+    background-color:#dcdcdc85;
+  }
+  .tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 2.1333rem;
+    /* border: .0267rem solid red; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tab-bar>.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-bar>.item>i {
+    font-size: .8rem;
+}
+
+.tab-bar>.item>span {
+    margin-top: .16rem;
+    font-size: .3733rem;
+}
+
+.tab-bar>.active {
+    color: red;
+}

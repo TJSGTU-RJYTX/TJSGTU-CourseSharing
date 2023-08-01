@@ -1,0 +1,52 @@
+body{
+    background-color: red;
+}
+.top-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: .2667rem;
+    margin-right: .2667rem;
+    margin-top: .2667rem;
+
+
+}
+
+.top-nav>.fa{  
+    font-size: .6933rem;
+    color: white;
+
+}
+.addedlist {
+    font-size: 20px;
+    color: white;
+}
+
+.ps {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+}
+.ps input {
+    width: 7.2rem;
+    height: 20px;
+    border: none;
+    margin-bottom: .16rem;
+    /* 清除轮廓 */
+    outline: none;
+}
+button {
+    width: 7.2rem;
+    height: 20px;
+    border: none;
+    margin-bottom: .16rem;
+    /* 清除轮廓 */
+    outline: none;
+}
+.box div{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 20px;
+    color: white;
+
+}

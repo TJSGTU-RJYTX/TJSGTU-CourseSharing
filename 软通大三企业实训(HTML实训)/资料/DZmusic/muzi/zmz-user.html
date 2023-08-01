@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <title>用户界面</title>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+
+    <!-- 引入vue文件 -->
+    <script src="./js/vue.js"></script>
+
+    <script>
+        // 获取uid
+        var uid = localStorage.getItem("uid");
+        console.log(uid)
+        // 登录条件判断 
+        // null 在if判断中为false
+        // !取反   !false = true
+        if (!uid) {
+            location.href = "./login.html";
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div class="info">
+            <img class="avatar" :src="`http://180.76.143.181:3000/${user.avatar}`" alt="">
+            <div class="modify">
+                <span class="uname" @click="goToUpdate()">{{user.uname}}</span>
+                <div class="qiandao">
+                    <span>签到</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <br> <br> <br> <br> <br>
+        <button class=" OUT" @click="out()">退出登录</button>
+        <input type="file" ref="files">
+        <button @click="upload">上传</button>
+        <div class="message">{{msg}}</div>
+
+        <div class=" tab-bar">
+            <div class="item " @click="goToFind()">
+                <i class="fa fa-globe"></i>
+                <span>发现</span>
+            </div>
+            <div class="item ">
+                <i class="fa fa-video-camera"></i>
+                <span>视频</span>
+            </div>
+            <div class="item" @click="goToWode()">
+                <i class="fa fa-music"></i>
+                <span>我的</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-users"></i>
+                <span>云村</span>
+            </div>
+            <div class="item active">
+                <i class="fa fa-user"></i>
+                <span>账号</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                user: {},
+                msg: ''
+            },
+
+            mounted() {
+                fetch('http://180.76.143.181:3000/userInfo?uid=' + uid)
+                    //   fetch('http://127.0.0.1:3000/userInfo/1)
+                    .then(res => res.json())
+                    .then(res => {
+                        console.log(res)
+                        this.user = res.data;
+                    })
+            },
+
+            // methods属性中定义的方法,可以在html中使用
+            methods: {
+                goToFind: function () {
+                    window.location.href = "find.html";
+                },
+                goToWode: function () {
+                    location.href = './wode.html'
+                },
+                goToUpdate: function () {
+                    location.href = './user-update.html'
+                },
+                out: function () {
+                    // 清除uid
+                    localStorage.removeItem("uid");
+                    location.href = "./login.html";
+                },
+                upload: function () {
+                    console.log(this.$refs.files.files)
+                    var fd = new FormData();
+                    fd.append('files', this.$refs.files.files[0]);
+                    var uid = localStorage.getItem("uid");
+                    fetch('http://180.76.143.181:3000/user/uploadAvatar/' + uid, {
+                        method: 'POST',
+                        body: fd
+                    }).then(res => res.json()).then(res => {
+                        console.log(res)
+                        this.user.avatar = res.src;
+                        
+                    })
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

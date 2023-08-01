@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/user-update.css">
+  <script>
+    document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+  </script>
+  <!-- 引入vue文件 -->
+  <script src="./js/js/vue.js"></script>
+  <title>修改信息</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>
+      <img src="img/dzy.png" class="logo" alt="加载">
+      修改个人信息
+   </h2>
+    <div class="form">
+      <input type="text" v-model="uname" placeholder="昵称"> <br>
+      <!-- disabled 禁用 -->
+      <input type="text" v-model="phone" disabled placeholder="用户手机号"> <br>
+      <input type="text" v-model="signature" placeholder="用户签名"> <br>
+      <button @click="update">修改</button>
+      <button @click="back">返回</button>
+    </div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        uname: '',
+        phone: '',
+        signature: ''
+      },
+      methods: {
+        update() {
+          var uid = localStorage.getItem('uid')
+          var obj = {
+            uid: uid,
+            uname: this.uname,
+            signature: this.signature
+          }
+          // 发请求修改用户信息
+          fetch('http://180.76.143.181:3000/user/update', {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }).then(res => res.json()).then(res => {
+            console.log(res)
+          })
+        },
+        back: function () {
+          location.href = './user.html'
+        }
+      },
+      mounted() {
+        // 修改用户信息之前需要先查询一次用户信息,并展示到页面上
+        var uid = localStorage.getItem('uid')
+        fetch('http://180.76.143.181:3000/user/info?uid=' + uid).then(res => res.json()).then(res => {
+          console.log(res)
+          this.uname = res.data.uname
+          this.phone = res.data.phone
+          this.signature = res.data.signature
+        })
+      },
+
+    })
+  </script>
+</body>
+
+</html>

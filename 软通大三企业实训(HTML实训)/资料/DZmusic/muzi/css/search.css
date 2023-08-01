@@ -1,0 +1,146 @@
+.nav-bar{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: white;
+    /* border: .0267rem solid red; */
+    left: 0;
+    right: 0;
+    top: 0;
+    justify-content: space-evenly;
+    z-index: 999;
+    margin-top: 1.3333rem;
+}
+.nav-bar>span{
+    font-size: .4267rem;
+    width: 1.3333rem;
+    text-align: center;
+    padding-bottom: .16rem;
+    
+}
+.nav-bar>.active
+{
+    border-bottom: .0533rem solid red;
+    color: red;
+}
+.box{
+    margin-top: 2.1333rem;
+}
+.box>.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box>.item>img{
+    width: .2667rem;
+}
+.box>.item>.info{
+    display: flex;
+    flex-direction: column;
+    width: 5.8667rem;
+    /* border: .0267rem solid red; */
+}
+.box>.item>.info>.title{
+    font-size: .3733rem;
+    margin-top: .4rem;
+    margin-bottom: .1333rem;
+}
+.box>.item>.info>.ps{
+    display: flex;
+} 
+.box>.item>.info>.ps>span:nth-child(1) {
+    color: #ff2721;
+    width: 1.2rem;
+    height: .4267rem;
+    border: .0267rem solid #ff2721;
+    border-radius: .16rem;
+    font-size: .4rem;
+    line-height: .4267rem;
+    text-align: center;
+    justify-content: center;
+    font-size: .3733rem;
+} 
+.box>.item>.info>.ps>span:nth-child(2) {
+    width: 1.8667rem;
+    font-size: .32rem;
+    line-height: .48rem;
+    text-align: center;
+    margin-left: .1333rem;
+} 
+.box>.item>.play{
+    width: .6667rem;
+    height: .6667rem;
+    margin-left: 1.7333rem;
+    /* border: .0267rem solid blue; */
+    margin-top: .5333rem;
+}
+.box>.item>.fa{
+    font-size: .5rem;
+    width: .6667rem;
+    height: .6667rem;
+    margin-left: .5333rem;
+    /* border: .0267rem solid black; */
+    margin-top: .8rem;
+}
+.search {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: .0267rem solid red; */
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: .2667rem;
+    padding-bottom: .2667rem;
+    background-color: white;
+    z-index: 999;
+    /* border: .0267rem solid red; */
+
+}
+.search>input {
+
+    /* 搜索放大镜图标 */
+    background-image: url("../img/search.png");
+    background-size: .4267rem .4267rem;
+    /* background-position: center; */
+
+    background-position-x: .2667rem;
+    background-position-y: .1867rem;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    justify-content: space-evenly;
+
+    border: none;
+    height: .7467rem;
+    width: 6.1rem;
+    border-radius: .3733rem;
+    /* 搜夜曲的位置通过padding判断 */
+    padding-left: 1.0667rem;
+}
+.search>.fa-angle-left{
+    font-size: .7rem;
+    margin-right: .2rem;
+}
+.search>.fa-close{
+    position: relative;
+    right: .8rem;
+    width: .5333rem;
+    height: .5333rem;
+    line-height: .5333rem;
+    border: 0;
+    font-size: .1333rem;
+    background-color: rgb(223, 215, 215);
+    border-radius: .4rem;
+    align-items: center;
+    justify-content: center; 
+}
+.search .search_input{
+    
+    width: .8rem;
+    height: .8rem;
+    border: .08rem solid gray;
+    border-radius: .48rem;
+   
+}

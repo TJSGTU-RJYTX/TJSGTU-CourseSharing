@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table_plaque</title>
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+</head>
+<style>
+    body {
+        background-image: url('./img/table-plaque-bg.png');
+        /* 背景图片大小，宽 高 */
+        background-size: cover cover;
+    }
+
+    div {
+        color: white;
+        position: fixed;
+        right: .8rem;
+        bottom: 1.0667rem;
+        background-color: #ffc0cbab;
+        width: 2.1333rem;
+        text-align: center;
+        /* 文本默认在行高中垂直居中，
+            所以把行高和元素的高度设成一样的，
+            看起来就像文本在元素中垂直居中一样 */
+        height: .8rem;
+        line-height: .8rem;
+        /* 圆角:设置的数值是圆的半径 */
+        border-radius: .4rem;
+        font-size: .3733rem;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="footer">
+            <span>{{ s }}s</span>
+            <span>跳过</span>
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    s: 5
+                },
+                mounted() {
+                    setInterval(() => {
+                        this.s = this.s - 1
+                        if (this.s == 1) {
+                            location.href = './find.html'
+                        }
+                    }, 1000);
+                },
+            })
+
+        </script>
+</body>
+
+</html>

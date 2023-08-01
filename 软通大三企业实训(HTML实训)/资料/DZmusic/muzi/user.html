@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/user.css" />
+    <title>user</title>
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+
+    <script>
+        // 获取uid
+        var uid = localStorage.getItem("uid");
+        console.log(uid)
+        // 登录条件判断 
+        // null 在if判断中为false
+        // !取反   !false = true
+        if (!uid) {
+            location.href = "./login.html";
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="info">
+
+            <img class="avatar" :src="`http://180.76.143.181:3000/${user.avatar}`" alt="">
+            <span class="uname">{{ user.phone }}</span>
+            <span class="uname">{{ user.uname }}</span>
+            <span class="uname">{{ user.signature }}</span>
+        </div>
+
+        <div class="out">
+            <button @click="out()">退出登录</button>
+        </div>
+        <div class="edit">
+            <button @click="editInfo()">修改信息</button>
+        </div>
+        <div class="editavatar">
+            <input type="file" ref="files">
+            <button @click="upload">上传</button>
+        </div>
+        
+        <div class="tab-bar">
+            <div class="item">
+                <i class="fa fa-globe" @click="goToFind()"></i>
+                <span>发现</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-video-camera"></i>
+                <span>视频</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-music" @click="goToWode"></i>
+                <span @click="goToWode">我的</span>
+            </div>
+            <div class="item">
+                <i class="fa fa-users"></i>
+                <span>云村</span>
+            </div>
+            <div class="item active">
+                <i class="fa fa-user"></i>
+                <span>账号</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                user: [],
+            },
+            mounted() {
+
+                console.log(uid)
+                fetch('http://180.76.143.181:3000/user/info?uid=' + uid)
+                    .then(res => res.json())
+                    .then(res => {
+                        console.log(res)
+                        this.user = res.data;
+                    })
+
+
+
+            },
+            methods: {
+
+                out: function () {
+                    // 清除uid
+                    localStorage.removeItem("uid");
+                    location.href = "./login.html";
+                },
+                upload: function () {
+                    console.log(this.$refs.files.files)
+                    var fd = new FormData();
+                    fd.append('files', this.$refs.files.files[0]);
+                    var uid = localStorage.getItem("uid");
+                    fetch('http://180.76.143.181:3000/user/uploadAvatar/' + uid, {
+                        method: 'POST',
+                        body: fd
+                    }).then(res => res.json()).then(res => {
+                        console.log(res)
+                        this.user.avatar = res.src;
+                    })
+                },
+                goToFind: function () {
+                    window.location.href = "find.html";
+                },
+                editInfo: function () {
+                    location.href = "user-update.html";
+                },
+                goToWode: function () {
+                    location.href = './wode.html'
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>

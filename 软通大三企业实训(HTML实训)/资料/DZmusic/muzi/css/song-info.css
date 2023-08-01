@@ -1,0 +1,46 @@
+body{
+    background-color: #7c7778;
+}
+.top-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: .2667rem;
+    margin-right: .2667rem;
+    margin-top: .2667rem;
+
+}
+
+.top-nav>.fa{  
+    font-size: .6933rem;
+    color: white;
+
+}
+.info{
+    color: white;
+    text-align: center;
+    margin-top: 2.6667rem;
+    display: flex;
+    flex-direction: column;
+}
+.info span:nth-child(1){
+    font-size: .8rem;
+}
+.info span:nth-child(2){
+    font-size: .4rem;
+    margin-bottom: .5333rem;
+}
+
+.cover{
+    width: 5.3333rem;
+    height: 5.3333rem;
+    border-radius: 3.2rem;
+    border: .5333rem solid black;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+}
+.audio {
+    margin-top: 1.0667rem;
+    text-align: center;
+  }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/wode.css">
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+</head>
+<body>
+    <div id="app">
+      <div class="info">
+        <img src="./img/user/101.jpg" alt="">
+        <div>
+          <span>丁真酱</span>
+          <span>Lv.0</span>
+        </div>
+      </div>
+  
+      <div class="nav">
+        <div class="item">
+          <i class="fa fa-music"></i>
+          <span>本地音乐</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-music"></i>
+          <span>本地音乐</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-music"></i>
+          <span>本地音乐</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-music"></i>
+          <span>本地音乐</span>
+        </div>
+      </div>
+  
+      <div class="wode">
+        <div class="yinyue" @click="goToCollect">
+          <i class="fa fa-heart" @click="goToCollect"></i>
+          <span @click="goToCollect">我的收藏</span>
+        </div>
+  
+        <div class="zuijin">
+          <div class="box">
+            <div class="item">
+              <div>
+                <img src="./img/song/615.jpg" alt="">
+                <span></span>
+                <i class="fa fa-heart"></i>
+              </div>
+              <span>全部已播放歌曲9首</span>
+            </div>
+
+            <div class="item">
+                <div>
+                  <img src="./img/song/781.jpg" alt="">
+                  <span></span>
+                  <i class="fa fa-heart"></i>
+                </div>
+                <span>视频：我的世界只有一个基岩的生存</span>
+              </div>
+
+              <div class="item">
+                <div>
+                  <img src="./img/song/801.jpg" alt="">
+                  <span></span>
+                  <i class="fa fa-heart"></i>
+                </div>
+                <span>全部已播放歌曲9首</span>
+              </div>
+
+              <div class="item">
+                <div>
+                  <img src="./img/song/618.jpg" alt="">
+                  <span></span>
+                  <i class="fa fa-heart"></i>
+                </div>
+                <span>全部已播放歌曲9首</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <div class="item">
+            <i class="fa fa-globe" @click="goToFind"></i>
+            <span @click="goToFind">发现</span>
+        </div>
+        <div class="item">
+            <i class="fa fa-video-camera"></i>
+            <span>视频</span>
+        </div>
+        <div class="item active">
+            <i class="fa fa-music"  active ></i>
+            <span >我的</span>
+        </div>
+        <div class="item">
+            <i class="fa fa-users"></i>
+            <span>云村</span>
+        </div>
+        <div class="item">
+            <i class="fa fa-user" @click="goToUser()"></i>
+            <span>账号</span>
+        </div>
+    </div>
+  
+    </div>
+    <script>
+      var vm = new Vue({
+        el:'#app',
+        data:{},
+
+        methods: {
+          goToFind : function () {
+            window.location.href = "find.html";
+        },
+        goToUser : function () {
+            location.href = './user.html'
+        },
+        goToCollect: function () {
+          location.href = './collect.html'
+        }
+}
+      })
+
+
+    </script>
+  </body>
+</html>

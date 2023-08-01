@@ -1,0 +1,187 @@
+body {
+    margin: 0rem;
+  }
+  
+  .info {
+    height: 4rem;
+    background-color: gray;
+    padding-top: .8rem;
+    padding-left: .5333rem;
+    display: flex;
+  }
+  
+  
+  .info .left img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  
+  .info .left {
+    position: relative;
+  }
+  
+  .info .left span {
+    position: absolute;
+    left: 0;
+    top: .2667rem;
+    background-color: #b94257;
+    color: white;
+    width: 1.0667rem;
+    height: .6933rem;
+    line-height: .6933rem;
+  
+    border-radius: 0 .3467rem .3467rem 0;
+    padding-left: .16rem;
+    font-size: .3733rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  
+  .info .count span {
+    position: absolute;
+    left: 2.2133rem;
+    width: 2.1333rem;
+    /* border: .0267rem solid red ; */
+    color: white;
+    display: inline-block;
+    font-size: small;
+  }
+  
+  .info .right {
+    margin-left: .2667rem;
+    /* border: .0267rem solid red; */
+  }
+  
+  .info .right .title {
+    font-size: .4267rem;
+    
+    /* border: .0267rem solid red; */
+  }
+  
+  .info .right span {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    color: white;
+    font-size: .48rem;
+  }
+  
+  .info .right .title {
+    display: flex;
+    align-items: center;
+  
+    font-size: .5333rem;
+  }
+  .info .right .comment {
+    display: flex;
+    font-size: 12px;
+  }
+  
+  .info .right div{
+    position: relative;
+    display: flex;
+    font-size: .3733rem;
+    margin-top: .8rem;
+  
+    /* border: .0267rem solid red; */
+  }
+  .info .right img {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    border-radius: .5333rem;
+    margin-top: 10.0012px;
+  }
+  
+  .info .right div span {
+    margin-left: 34.9988px;
+    margin-top: 19.9988px;
+    font-size: .3733rem;
+  
+    /* border: .0267rem solid red; */
+  }
+  .sheet-list {
+    top: 2.9333rem;
+    background-color: gainsboro;
+    font-size: .3733rem;
+    color: gray;
+    line-height: .8rem;
+    padding-left: .2667rem;
+  }
+
+
+  .box .item .seq {
+
+    height: .5333rem;
+    width: .1333rem;
+    color: black;
+    font-size: .5333rem;
+  }
+  .box{
+    margin-top: .16rem;
+  }
+  .box .item{
+
+    display: flex;
+    justify-content: center;
+    border-bottom: .0267rem solid gainsboro; 
+    padding-bottom: .1333rem;
+    margin-bottom: .2667rem;
+    margin-top: .2667rem;
+  }
+  .box .item .unlike button{
+    
+    border: .0267rem solid black;
+    background-color: red;
+    color: white;
+    border-radius: .08rem;
+  }
+  .box .item .info-song .title{
+    margin-left: .2333rem;
+
+  
+  }
+  .box .item .info-song{
+    width: 5.8667rem;
+    
+    /* border: .0267rem solid red; */
+  }
+
+
+
+
+
+
+  .tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 2.1333rem;
+    /* border: .0267rem solid red; */
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .tab-bar>.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tab-bar>.item>i {
+    font-size: .8rem;
+  }
+  
+  .tab-bar>.item>span {
+    margin-top: .16rem;
+    font-size: .3733rem;
+  }
+  
+  .tab-bar>.active {
+    color: red;
+  }
+  .info-song .title{
+    font-size: .4533rem;
+  }

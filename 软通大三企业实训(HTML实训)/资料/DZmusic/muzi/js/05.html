@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue框架 -->
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 创建一个div元素,id为app,不可变,后续所有的html代码都写在此div内部 -->
+    <div id="app">
+        <!-- 使用双花括号解析data中的数据 -->
+        <h3>待办事项列表</h3>
+        <input type="text" v-model="task">
+        <h3>{{ task }}</h3>
+        <button @click="add">添加</button>
+        <!-- ul创建无序列表 -->
+        <ul>
+            <li v-for="(item ,i ) of tasks">
+                <button @click="del(i)">x</button>
+                第{{ i }}件事： {{ item }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 创建一个vue对象
+        var vm = new Vue({
+            el: "#app", // 指定vue对象控制的元素
+            // 通过vue对象的data属性中的数据,可以直接在html中使用
+            data: {
+                task: '',
+                tasks: ['吃饭', '睡觉', '打豆豆']
+            },
+            // methods属性中定义的方法,可以在html中使用
+            methods: {
+                add() {
+                    //打印出数组的的元素
+                    console.log(this.task)
+                    // 在vue中给数组添加元素不可以用下标
+                    // this.tasks[this.tasks.length] = this.task
+                    // push 数组提供的方法,可以在数组最后添加元素
+                    this.tasks.push(this.task)
+                    console.log(this.tasks)
+                    //清除输入框里面的输入
+                    this.task = ''
+                },
+                del(i) {
+                    console.log(i)
+                    // splice 数组提供的方法,可以删除数组中的元素
+                    // splice(从哪个下标开始删除,删除几个元素)
+                    this.tasks.splice(i, 1)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

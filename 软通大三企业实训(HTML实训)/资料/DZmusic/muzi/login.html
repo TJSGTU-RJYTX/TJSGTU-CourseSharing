@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+    <style>
+        body {
+            background-color: red;
+        }
+
+        h2 {
+            font-size: .8rem;
+            color: white;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4.2667rem;
+            margin-bottom: 1.3333rem;
+        }
+
+        .logo {
+            /* 设置图片的大小 */
+            width: .8rem;
+            height: .8rem;
+            margin-right: .1333rem;
+
+        }
+
+        /* css选择器可以灵活运用 */
+
+        .from>input {
+            width: 7.2rem;
+            height: .96rem;
+            border-radius: .6667rem;
+            border: none;
+            margin-bottom: .16rem;
+            /* 清除轮廓 */
+            outline: none;
+
+        }
+
+        button {
+            width: 7.4667rem;
+            height: .96rem;
+            border-radius: .5333rem;
+            border: none;
+            font-size: .5333rem;
+            background-color: red;
+            border: .0533rem solid white;
+            color: white;
+            font-weight: 200;
+        }
+
+        .from {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* 弹性子元素默认不换行 */
+        }
+
+        .uname {
+            background-image: url("img/uname.png");
+            background-size: 1.0667rem 1.0667rem;
+            /* 控制重复 */
+            background-repeat: no-repeat;
+            /* 控制位置 */
+            background-position: right center;
+            padding-left: .2667rem;
+
+        }
+
+        .upwd {
+            width: 1.6rem;
+            height: 1.8667rem;
+            background-image: url("img/upwd.png");
+            background-size: 1.0667rem 1.0667rem;
+            /* 控制重复 */
+            background-repeat: no-repeat;
+            /* 控制位置 */
+            background-position: right center;
+            padding-left: .2667rem;
+
+
+        }
+
+        .agreement>.left {
+            width: 1.8667rem;
+            margin-left: .8rem;
+        }
+
+        .agreement>.right {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: .5333rem;
+        }
+
+        .agreement {
+            font-size: .32rem;
+            color: white;
+            display: flex;
+            margin-top: .5333rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .icon {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: .8rem;
+            display: flex;
+            justify-content: center;
+            margin-top: .5333rem;
+        }
+
+        .icon>i {
+            width: 1.3333rem;
+            height: 1.3333rem;
+            background-size: 1.0667rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: white;
+            border-radius: .6667rem;
+            ;
+            margin-left: .2667rem;
+            margin-right: .2667rem;
+        }
+
+        .weixin {
+            background-image: url(img/weixin.png);
+        }
+
+        .qq {
+            background-image: url(img/qq.png);
+        }
+
+        .weibo {
+            background-image: url(img/weibo.png);
+        }
+
+        .apple {
+            background-image: url(img/apple.png);
+        }
+
+        /* 子代选择器 */
+        .youke {
+            font-size: .4rem;
+            margin-top: .5333rem;
+            text-align: center;
+            color: white;
+            /* border: .0267rem solid white; */
+        }
+        .reg {
+            font-size: .4rem;
+            margin-top: .5333rem;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>
+            <img src="img/dzy.png" class="logo" alt="加载">
+            丁真音乐
+
+        </h2>
+        <div class="from">
+            <input type="text" class="uname" placeholder="账号" id="uname" v-model="phone">
+            <br>
+            <input type="password" class="upwd" placeholder="密码" id="upwd" v-model="upwd">
+            <button @click="login()" class="login"> 登陆</button>
+        </div>
+        <div>
+
+            <div class="agreement">
+                <div class="left">
+                    <input type="checkbox" name="" id="">同意
+                </div>
+                <div class="right">
+                    <span>《服务条款》</span>
+                    <span> 《隐私政策》</span>
+                    <span>《儿童隐私政策》</span>
+                    <span>《中国移动认证服务协议》</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="youke" @click="goToCodelogin()"> 》》验证码登陆《《</div>
+        <div class="reg" @click="goToReg()"> 》》注册账号《《</div>
+        <div class="icon">
+            <i class="weixin"></i>
+            <i class="qq"></i>
+            <i class="weibo"></i>
+            <i class="apple"></i>
+        </div>
+    </div>
+
+    <script>
+   var vm = new Vue({
+			el: "#app",
+			data: {
+				phone: '',
+				upwd: '',
+				msg: ''
+			},
+			methods: {
+				login: function () {
+					var user = {
+						phone: this.phone,
+						upwd: this.upwd
+					}
+					fetch('http://180.76.143.181:3000/user/login',
+						{
+							method: 'POST',
+							body: JSON.stringify(user),
+							headers: { 'Content-Type': 'application/json' }
+						}
+					).then(res => res.json())
+						.then(res => {
+							console.log(res)
+							if (res.code == 200) {
+								location.href = "user.html"
+								// 保存登录信息
+								localStorage.setItem('uid', res.uid)
+							} else {
+								this.msg = res.msg
+							}
+						})
+				},
+				goToFind: function () {
+					location.href = "find.html";
+				},
+                goToReg: function () {
+					location.href = "reg.html";
+				},
+                goToCodelogin: function () {
+					location.href = "code-login.html";
+				},
+
+			},
+		})
+    </script>
+
+</body>
+
+</html>

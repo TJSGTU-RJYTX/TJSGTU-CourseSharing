@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/search.css">
+    <title>search</title>
+    <script src="./js/js/vue.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.screen.width / 10 + 'px'
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="search">
+            <i class="fa  fa-angle-left fa-lg" @click="goBack()"></i>
+
+            <input type="text" placeholder="时间流逝" v-model="searchStr" @input="search()">
+            <button class="fa fa-close" @click="clean"></button>
+            <img src="img/song/615.jpg" class="search_input" alt="" @click="search()">
+
+
+        </div>
+        <div class="nav-bar">
+            <span class="active">综合</span>
+            <span>单曲</span>
+            <span>云村</span>
+            <span>歌单</span>
+            <span>歌手</span>
+            <span>专辑</span>
+        </div>
+
+        <div class="box">
+            <div class="item" v-for="song of songList">
+                <div class="info">
+                    <div class="title">{{ song.title }}</div>
+                    <div class="ps">
+                        <span>原创</span>
+                        <span>翻唱-{{ song.singer }}</span>
+                    </div>
+                </div>
+                <img class="play" src="img/youtube.png" alt="" @click="goToSong(song.sid)">
+                <i class="fa fa-ellipsis-v"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br><br><br><br>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                songList: [],
+                songs: [],
+                searchStr: ''
+            },
+            mounted() {
+                var url = location.search
+                url = url.slice(1)
+                var params = new URLSearchParams(url)
+                var searchStr = params.get('searchStr')
+                this.searchStr=searchStr
+                this.search()
+            },
+            methods: {
+                goBack: function () {
+                    location.href = './find.html'
+                },
+
+                goToSong: function (sid) {
+                    window.location.href = './song-info.html?sid=' + sid
+                },
+                search: function () {
+                    // 发送请求,获取搜索结果,位置之前已经把data中的searchStr赋值了
+					// 		所以可以直接使用this.searchStr
+					// 并且 以后每次在当前页面点击搜索的时候,由于跟文本框做了双向绑定
+					// 		可以个使用this.searchStr获取到新输入的内容
+					fetch('http://180.76.143.181:3000/song/search?keywords=' + this.searchStr)
+						.then(res => res.json())
+						.then(res => {
+							this.songList = res.data
+						})
+                },
+                clean: function () {
+                    location.href = './search.html'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
