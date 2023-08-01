@@ -1,0 +1,275 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/11/2022  19:44:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\计时器.obj TO .\Objects\计时器 PRINT (.\Listings\计时器.m51
+>> )
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\计时器.obj (______)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\计时器 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?_SHUMAGUAN_BIT?______
+            DATA    000DH     0002H     UNIT         ?DT?______
+            DATA    000FH     0001H     UNIT         ?DT?_SHUMAGUAN_CONTROL?______
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     00A1H     UNIT         ?PR?_SHUMAGUAN_BIT?______
+            CODE    00AFH     0047H     UNIT         ?PR?T0_FUNC?______
+            CODE    00F6H     0041H     UNIT         ?CO?______
+            CODE    0137H     0039H     UNIT         ?PR?ALLINIT?______
+            CODE    0170H     002DH     UNIT         ?C?LIB_CODE
+            CODE    019DH     002BH     UNIT         ?PR?_DELAY_MS?______
+            CODE    01C8H     0026H     UNIT         ?PR?_SHUMAGUAN_CONTROL?______
+            CODE    01EEH     000FH     UNIT         ?PR?T0_INIT?______
+            CODE    01FDH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0209H     000AH     UNIT         ?PR?MAIN?______
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\计时器 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?______
+
+?PR?MAIN?______
+  +--> ?PR?T0_INIT?______
+
+*** NEW ROOT ***************************************************
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  19:44:29  PAGE 2
+
+
+?PR?T0_FUNC?______
+  +--> ?CO?______
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\计时器 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:01FDH         SEGMENT       ?C_C51STARTUP
+  I:0010H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0200H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:01FDH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:01FDH         LINE#         133
+  C:01FFH         LINE#         134
+  C:0200H         LINE#         135
+  C:0201H         LINE#         136
+  C:0203H         LINE#         185
+  C:0206H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ______
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0127H         PUBLIC        table
+  D:00A8H         PUBLIC        IE
+  C:0112H         PUBLIC        weizhi
+  D:000DH         PUBLIC        timer
+  C:0209H         PUBLIC        main
+  D:000EH         PUBLIC        count
+  C:00AFH         PUBLIC        t0_func
+  D:0089H         PUBLIC        TMOD
+  C:01C8H         PUBLIC        _shumaguan_control
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  19:44:29  PAGE 3
+
+
+  C:00F6H         PUBLIC        shuzi
+  C:01EEH         PUBLIC        t0_init
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:0108H         PUBLIC        num
+  C:01A3H         PUBLIC        _delay_ms
+  B:0088H.4       PUBLIC        TR0
+  C:000EH         PUBLIC        _shumaguan_bit
+  C:0137H         PUBLIC        allinit
+  C:019FH         SYMBOL        L?0036
+  -------         PROC          L?0035
+  -------         ENDPROC       L?0035
+  C:019FH         SYMBOL        L?0036
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        q
+  D:0002H         SYMBOL        w
+  -------         ENDDO         
+  C:01A3H         LINE#         100
+  C:01A3H         LINE#         102
+  C:01B3H         LINE#         103
+  C:01C0H         LINE#         104
+  C:01C7H         LINE#         105
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          ALLINIT
+  C:0137H         LINE#         107
+  C:0137H         LINE#         108
+  C:0137H         LINE#         109
+  C:013FH         LINE#         110
+  C:0142H         LINE#         111
+  C:0145H         LINE#         113
+  C:014DH         LINE#         114
+  C:0150H         LINE#         115
+  C:0153H         LINE#         117
+  C:015BH         LINE#         118
+  C:015EH         LINE#         119
+  C:0161H         LINE#         120
+  C:0169H         LINE#         121
+  C:016CH         LINE#         122
+  C:016FH         LINE#         123
+  -------         ENDPROC       ALLINIT
+  -------         PROC          _SHUMAGUAN_BIT
+  D:0008H         SYMBOL        a
+  D:000BH         SYMBOL        b
+  -------         DO            
+  C:011AH         SYMBOL        led_p
+  D:000CH         SYMBOL        i
+  -------         ENDDO         
+  C:000EH         LINE#         126
+  C:0016H         LINE#         127
+  C:0016H         LINE#         130
+  C:0019H         LINE#         131
+  C:0019H         LINE#         132
+  C:002DH         LINE#         133
+  C:002DH         LINE#         134
+  C:0035H         LINE#         135
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  19:44:29  PAGE 4
+
+
+  C:0038H         LINE#         136
+  C:0040H         LINE#         137
+  C:004DH         LINE#         138
+  C:0050H         LINE#         139
+  C:0058H         LINE#         140
+  C:006DH         LINE#         141
+  C:006FH         LINE#         142
+  C:0071H         LINE#         144
+  C:0071H         LINE#         145
+  C:0079H         LINE#         146
+  C:007CH         LINE#         147
+  C:0084H         LINE#         148
+  C:0091H         LINE#         149
+  C:0094H         LINE#         150
+  C:009CH         LINE#         151
+  C:009FH         LINE#         152
+  C:00A2H         LINE#         153
+  C:00A2H         LINE#         155
+  C:00AEH         LINE#         156
+  -------         ENDPROC       _SHUMAGUAN_BIT
+  -------         PROC          _SHUMAGUAN_CONTROL
+  D:000FH         SYMBOL        a
+  D:0001H         SYMBOL        b
+  C:01C8H         LINE#         158
+  C:01CCH         LINE#         159
+  C:01CCH         LINE#         160
+  C:01CFH         LINE#         161
+  C:01DFH         LINE#         163
+  C:01E9H         LINE#         164
+  -------         ENDPROC       _SHUMAGUAN_CONTROL
+  -------         PROC          T0_INIT
+  C:01EEH         LINE#         6
+  C:01EEH         LINE#         7
+  C:01EEH         LINE#         8
+  C:01F1H         LINE#         9
+  C:01F4H         LINE#         10
+  C:01F6H         LINE#         11
+  C:01F9H         LINE#         12
+  C:01FCH         LINE#         13
+  -------         ENDPROC       T0_INIT
+  -------         PROC          MAIN
+  C:0209H         LINE#         14
+  C:0209H         LINE#         15
+  C:0209H         LINE#         16
+  C:020CH         LINE#         17
+  C:020FH         LINE#         18
+  C:0211H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         PROC          T0_FUNC
+  C:00AFH         LINE#         21
+  C:00B7H         LINE#         23
+  C:00BAH         LINE#         24
+  C:00BDH         LINE#         25
+  C:00C4H         LINE#         26
+  C:00C4H         LINE#         27
+  C:00C6H         LINE#         28
+  C:00C8H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  19:44:29  PAGE 5
+
+
+  C:00CEH         LINE#         30
+  C:00CEH         LINE#         31
+  C:00D0H         LINE#         32
+  C:00D5H         LINE#         33
+  C:00D5H         LINE#         34
+  C:00DDH         LINE#         35
+  C:00E0H         LINE#         36
+  C:00E2H         LINE#         38
+  C:00E2H         LINE#         39
+  C:00EBH         LINE#         40
+  C:00EDH         LINE#         41
+  C:00EDH         LINE#         42
+  C:00EDH         LINE#         43
+  -------         ENDPROC       T0_FUNC
+  -------         ENDMOD        ______
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0170H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ALLINIT?______
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHUMAGUAN_BIT?______
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHUMAGUAN_CONTROL?______
+
+Program Size: data=17.0 xdata=0 code=523
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,332 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/11/2022  14:39:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\lac1602_mfj.obj TO .\Objects\lcd1602_mfj PRINT (.\Listings\
+>> lcd1602_mfj.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\lac1602_mfj.obj (LAC1602_MFJ)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (STRLEN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\lcd1602_mfj (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?_SHUMAGUAN_BIT?LAC1602_MFJ
+            DATA    000DH     0001H     UNIT         ?DT?_SHUMAGUAN_CONTROL?LAC1602_MFJ
+            DATA    000EH     0001H     UNIT         _DATA_GROUP_
+            IDATA   000FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00A1H     UNIT         ?PR?_SHUMAGUAN_BIT?LAC1602_MFJ
+            CODE    00A4H     005BH     UNIT         ?PR?MAIN?LAC1602_MFJ
+            CODE    00FFH     0046H     UNIT         ?C?LIB_CODE
+            CODE    0145H     0040H     UNIT         ?CO?LAC1602_MFJ
+            CODE    0185H     0039H     UNIT         ?PR?ALLINIT?LAC1602_MFJ
+            CODE    01BEH     002BH     UNIT         ?PR?_DELAY_MS?LAC1602_MFJ
+            CODE    01E9H     0026H     UNIT         ?PR?_SHUMAGUAN_CONTROL?LAC1602_MFJ
+            CODE    020FH     001BH     UNIT         ?PR?WRITE_INIT?LAC1602_MFJ
+            CODE    022AH     0019H     UNIT         ?PR?_WRITE_COMMAND?LAC1602_MFJ
+            CODE    0243H     0019H     UNIT         ?PR?_WRITE_DATA?LAC1602_MFJ
+            CODE    025CH     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0271H     0011H     UNIT         ?PR?CHECK_BF?LAC1602_MFJ
+            CODE    0282H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lcd1602_mfj (?C_STARTUP)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?LAC1602_MFJ
+
+?PR?MAIN?LAC1602_MFJ                       000EH    0001H
+  +--> ?PR?WRITE_INIT?LAC1602_MFJ
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  14:39:52  PAGE 2
+
+
+  +--> ?PR?_WRITE_COMMAND?LAC1602_MFJ
+  +--> ?CO?LAC1602_MFJ
+  +--> ?PR?_STRLEN?STRLEN
+  +--> ?PR?_WRITE_DATA?LAC1602_MFJ
+  +--> ?PR?_DELAY_MS?LAC1602_MFJ
+
+?PR?WRITE_INIT?LAC1602_MFJ                 -----    -----
+  +--> ?PR?_WRITE_COMMAND?LAC1602_MFJ
+
+?PR?_WRITE_COMMAND?LAC1602_MFJ             -----    -----
+  +--> ?PR?CHECK_BF?LAC1602_MFJ
+  +--> ?PR?_DELAY_MS?LAC1602_MFJ
+
+?PR?_WRITE_DATA?LAC1602_MFJ                -----    -----
+  +--> ?PR?CHECK_BF?LAC1602_MFJ
+  +--> ?PR?_DELAY_MS?LAC1602_MFJ
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lcd1602_mfj (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0282H         SEGMENT       ?C_C51STARTUP
+  I:000FH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0285H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0282H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0282H         LINE#         133
+  C:0284H         LINE#         134
+  C:0285H         LINE#         135
+  C:0286H         LINE#         136
+  C:0288H         LINE#         185
+  C:028BH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  14:39:52  PAGE 3
+
+
+
+  -------         MODULE        LAC1602_MFJ
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0179H         PUBLIC        number
+  C:0157H         PUBLIC        weizhi
+  C:016CH         PUBLIC        name
+  C:00A4H         PUBLIC        main
+  C:0243H         PUBLIC        _write_data
+  C:01E9H         PUBLIC        _shumaguan_control
+  C:0145H         PUBLIC        shuzi
+  C:020FH         PUBLIC        write_init
+  B:00A0H.7       PUBLIC        en
+  C:01C4H         PUBLIC        _delay_ms
+  B:00A0H.6       PUBLIC        rs
+  C:0271H         PUBLIC        check_BF
+  B:00A0H.5       PUBLIC        rw
+  C:0003H         PUBLIC        _shumaguan_bit
+  C:0185H         PUBLIC        allinit
+  C:022AH         PUBLIC        _write_command
+  C:01C0H         SYMBOL        L?0042
+  -------         PROC          L?0041
+  -------         ENDPROC       L?0041
+  C:01C0H         SYMBOL        L?0042
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        q
+  D:0002H         SYMBOL        w
+  -------         ENDDO         
+  C:01C4H         LINE#         99
+  C:01C4H         LINE#         101
+  C:01D4H         LINE#         102
+  C:01E1H         LINE#         103
+  C:01E8H         LINE#         104
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          ALLINIT
+  C:0185H         LINE#         106
+  C:0185H         LINE#         107
+  C:0185H         LINE#         108
+  C:018DH         LINE#         109
+  C:0190H         LINE#         110
+  C:0193H         LINE#         112
+  C:019BH         LINE#         113
+  C:019EH         LINE#         114
+  C:01A1H         LINE#         116
+  C:01A9H         LINE#         117
+  C:01ACH         LINE#         118
+  C:01AFH         LINE#         119
+  C:01B7H         LINE#         120
+  C:01BAH         LINE#         121
+  C:01BDH         LINE#         122
+  -------         ENDPROC       ALLINIT
+  -------         PROC          _SHUMAGUAN_BIT
+  D:0008H         SYMBOL        a
+  D:000BH         SYMBOL        b
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  14:39:52  PAGE 4
+
+
+  -------         DO            
+  C:015FH         SYMBOL        led_p
+  D:000CH         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         125
+  C:000BH         LINE#         126
+  C:000BH         LINE#         129
+  C:000EH         LINE#         130
+  C:000EH         LINE#         131
+  C:0022H         LINE#         132
+  C:0022H         LINE#         133
+  C:002AH         LINE#         134
+  C:002DH         LINE#         135
+  C:0035H         LINE#         136
+  C:0042H         LINE#         137
+  C:0045H         LINE#         138
+  C:004DH         LINE#         139
+  C:0062H         LINE#         140
+  C:0064H         LINE#         141
+  C:0066H         LINE#         143
+  C:0066H         LINE#         144
+  C:006EH         LINE#         145
+  C:0071H         LINE#         146
+  C:0079H         LINE#         147
+  C:0086H         LINE#         148
+  C:0089H         LINE#         149
+  C:0091H         LINE#         150
+  C:0094H         LINE#         151
+  C:0097H         LINE#         152
+  C:0097H         LINE#         154
+  C:00A3H         LINE#         155
+  -------         ENDPROC       _SHUMAGUAN_BIT
+  -------         PROC          _SHUMAGUAN_CONTROL
+  D:000DH         SYMBOL        a
+  D:0001H         SYMBOL        b
+  C:01E9H         LINE#         157
+  C:01EDH         LINE#         158
+  C:01EDH         LINE#         159
+  C:01F0H         LINE#         160
+  C:0200H         LINE#         162
+  C:020AH         LINE#         163
+  -------         ENDPROC       _SHUMAGUAN_CONTROL
+  -------         PROC          CHECK_BF
+  -------         DO            
+  D:0007H         SYMBOL        x
+  -------         ENDDO         
+  C:0271H         LINE#         11
+  C:0271H         LINE#         12
+  C:0271H         LINE#         15
+  C:0271H         LINE#         16
+  C:0273H         LINE#         17
+  C:0275H         LINE#         18
+  C:0277H         LINE#         19
+  C:0279H         LINE#         20
+  C:027BH         LINE#         21
+  C:027FH         LINE#         22
+  C:0281H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  14:39:52  PAGE 5
+
+
+  -------         ENDPROC       CHECK_BF
+  -------         PROC          _WRITE_COMMAND
+  D:0006H         SYMBOL        cmd
+  C:022AH         LINE#         24
+  C:022CH         LINE#         25
+  C:022CH         LINE#         26
+  C:022FH         LINE#         27
+  C:0231H         LINE#         28
+  C:0233H         LINE#         29
+  C:0235H         LINE#         30
+  C:0237H         LINE#         31
+  C:0239H         LINE#         32
+  C:023AH         LINE#         33
+  C:023CH         LINE#         34
+  -------         ENDPROC       _WRITE_COMMAND
+  -------         PROC          _WRITE_DATA
+  D:0006H         SYMBOL        dat
+  C:0243H         LINE#         36
+  C:0245H         LINE#         37
+  C:0245H         LINE#         38
+  C:0248H         LINE#         39
+  C:024AH         LINE#         40
+  C:024CH         LINE#         41
+  C:024EH         LINE#         42
+  C:0250H         LINE#         43
+  C:0252H         LINE#         44
+  C:0253H         LINE#         45
+  C:0255H         LINE#         46
+  -------         ENDPROC       _WRITE_DATA
+  -------         PROC          WRITE_INIT
+  C:020FH         LINE#         48
+  C:020FH         LINE#         49
+  C:0211H         LINE#         50
+  C:0216H         LINE#         51
+  C:021BH         LINE#         52
+  C:0220H         LINE#         53
+  C:0225H         LINE#         54
+  -------         ENDPROC       WRITE_INIT
+  -------         PROC          MAIN
+  -------         DO            
+  D:000EH         SYMBOL        i
+  -------         ENDDO         
+  C:00A4H         LINE#         57
+  C:00A4H         LINE#         58
+  C:00A4H         LINE#         61
+  C:00A7H         LINE#         63
+  C:00A7H         LINE#         64
+  C:00A7H         LINE#         65
+  C:00ACH         LINE#         66
+  C:00C0H         LINE#         67
+  C:00C0H         LINE#         68
+  C:00CAH         LINE#         69
+  C:00D1H         LINE#         70
+  C:00D5H         LINE#         71
+  C:00DAH         LINE#         72
+  C:00EEH         LINE#         73
+  C:00EEH         LINE#         74
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/11/2022  14:39:52  PAGE 6
+
+
+  C:00F8H         LINE#         75
+  C:00FBH         LINE#         76
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAC1602_MFJ
+
+  -------         MODULE        ?C?CLDOPTR
+  C:00FFH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        STRLEN
+  C:025CH         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?CLDPTR
+  C:012CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ALLINIT?LAC1602_MFJ
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHUMAGUAN_BIT?LAC1602_MFJ
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHUMAGUAN_CONTROL?LAC1602_MFJ
+
+Program Size: data=16.0 xdata=0 code=654
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

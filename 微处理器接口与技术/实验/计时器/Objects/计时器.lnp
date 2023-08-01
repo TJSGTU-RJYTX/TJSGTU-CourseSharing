@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\计时器.obj" 
+TO ".\Objects\计时器" 
+PRINT(".\Listings\计时器.m51")
